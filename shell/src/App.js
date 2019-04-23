@@ -53,7 +53,7 @@ var loadMicroFront = function loadMicroFront(microName) {
 
 appLoaded.push(loadMicroFront('mf1'));
 appLoaded.push(loadMicroFront('mf2'));
-//appLoaded.push(loadMicroFront('mf2'));
+appLoaded.push(loadMicroFront('mf3'));
 Promise.all(appLoaded).then(function (contracts) {
   console.log("contracts", contracts);
   window.shellComponent.forceUpdate();
