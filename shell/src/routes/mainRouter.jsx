@@ -1,8 +1,7 @@
 import React from 'react';
-import {BrowserRouter, Switch, Route} from "react-router-dom";
+import {BrowserRouter, Switch} from "react-router-dom";
 import flattenChildren from 'react-flatten-children';
-import Micro from './mf1';
-import { Outlet } from 'react-conduit';
+
 
 export default class MainRouter extends React.Component{
 
@@ -26,7 +25,6 @@ export default class MainRouter extends React.Component{
                         ))
                     )
                 }
-                <Outlet label={"test123"} />
             </BrowserRouter>
         );
     }

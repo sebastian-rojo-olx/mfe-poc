@@ -62,7 +62,6 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "build:dll": "node scripts/build.dll.js",
     "test": "node scripts/test.js"
   },
   "eslintConfig": {

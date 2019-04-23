@@ -1,0 +1,10 @@
+{
+  "name": "microfrontend_poc",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "install:all": "yarn --cwd ./commons && yarn --cwd ./mf1 && yarn --cwd ./mf2 && yarn --cwd ./mf3 && yarn --cwd ./shell",
+    "build:all": "yarn --cwd ./commons build && yarn --cwd ./mf1 build && yarn --cwd ./mf2 build && yarn --cwd ./mf3 build ",
+    "start": "yarn --cwd ./shell start"
+  }
+}

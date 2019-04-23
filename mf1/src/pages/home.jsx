@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Inlet } from 'react-conduit';
 
 export default () =>(
     <div>
@@ -9,9 +8,6 @@ export default () =>(
         <Link to="/items">Items</Link>
         <br/>
         <Link to="/search">Search</Link>
-        <Inlet label={'test123'} >
-                <p>ASfns adoifnasoid fnasoid nfasdinfasodjfn aos</p>
-        </Inlet>
     </div>
 
 )

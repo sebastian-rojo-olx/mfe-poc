@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "react": "^16.8.6",
+    "react-addons-create-fragment": "^15.6.2",
+    "react-conduit": "^1.2.0",
     "react-dom": "^16.8.6",
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
