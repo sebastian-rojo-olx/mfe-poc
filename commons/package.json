@@ -10,7 +10,7 @@
     "webpack": "4.17.1"
   },
   "scripts": {
-    "build": "webpack -p && cp ./build/*.* ../shell/dll && cp ./build/*.* ../mf1/dll"
+    "build": "webpack && cp ./build/*.* ../shell/public && cp ./build/*.* ../shell/dll && cp ./build/*.* ../mf1/dll && cp ./build/*.* ../mf2/dll && cp ./build/*.* ../mf3/dll"
   },
   "eslintConfig": {
     "extends": "react-app"

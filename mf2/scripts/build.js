@@ -179,6 +179,8 @@ function build(previousFileSizes) {
           .catch(error => reject(new Error(error)));
       }
 
+      fs.copySync(paths.appBuild + '/mf2', '../shell/public/mf2');
+
       return resolve(resolveArgs);
     });
   });

@@ -26,7 +26,7 @@ const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
-const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
+const shouldUseSourceMap = false;
 // Some apps do not need the benefits of saving a web request, so not inlining the chunk
 // makes for a smoother build process.
 const shouldInlineRuntimeChunk = process.env.INLINE_RUNTIME_CHUNK !== 'false';
@@ -148,6 +148,7 @@ module.exports = function(webpackEnv) {
     output: {
       libraryTarget: 'umd',
       library: 'mf1',
+      jsonpFunction: 'mf1jsonP',
       // The build folder.
       path: isEnvProduction ? paths.appBuild : undefined,
       // Add /* filename */ comments to generated require()s in the output.
