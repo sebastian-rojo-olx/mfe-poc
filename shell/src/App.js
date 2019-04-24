@@ -4,7 +4,9 @@ import MainRouter from './routes/mainRouter';
 import { ConduitProvider } from "react-conduit";
 
 let routes = {};
-var appLoaded = [];
+let appLoaded = [];
+let registeredApps = ['mf1', 'mf2', 'mf3'];
+
 
 class App extends Component {
 
@@ -22,20 +24,17 @@ class App extends Component {
 
 
 var loadMicroFront = function loadMicroFront(microName) {
-  return fetch("./".concat(microName, "/asset-manifest.json")).then(function (response) {
+  return fetch(`./${microName}/asset-manifest.json`).then(function (response) {
     return response.json();
   }).then(function (data) {
     return new Promise(function (resolve, reject) {
       var el = document.createElement("script");
-      el.src = "./".concat(data["".concat(microName, ".js")]);
+      el.src = `./${data[`${microName}.js`]}`;
       el.addEventListener('load', function () {
         //import( /*webpackMode: "weak" */ microName).then(function(data){
         //    console.log("routes", data);
         //});
         window[microName].default.Contract().then(function (contract) {
-          debugger;
-          console.log("contract ", contract.Routes);
-          console.log("routes", routes);
           routes = {...routes, [microName]: contract.Routes};
           return resolve(contract.Routes); //window.shellComponent.forceUpdate();
         });
@@ -51,9 +50,9 @@ var loadMicroFront = function loadMicroFront(microName) {
   });
 };
 
-appLoaded.push(loadMicroFront('mf1'));
-appLoaded.push(loadMicroFront('mf2'));
-appLoaded.push(loadMicroFront('mf3'));
+registeredApps.forEach((appName)=>{
+  appLoaded.push(loadMicroFront(appName));
+});
 Promise.all(appLoaded).then(function (contracts) {
   console.log("contracts", contracts);
   window.shellComponent.forceUpdate();
